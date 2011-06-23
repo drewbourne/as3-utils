@@ -11,6 +11,9 @@ package utils.display
 
 		if (_target != null && _parent != null)
 		{
+			if (_target.parent != null) 
+				_target.parent.removeChild(_target);
+			
 			switch (_adjustOrder)
 			{
 				case ADD_TARGET_TO_PARENT_ADJUST_ORDER_TYPE_LAST:
