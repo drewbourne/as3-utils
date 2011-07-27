@@ -23,7 +23,7 @@ package utils.object
 			// Scan regular classes for list of properties
 			var properties  : XMLList = def..variable.@name + def..accessor.@name;
 			for each (var sKey:* in properties) {
-				keys.push(sKey);
+				keys.push( String(sKey) );
 			}
 		}
 
