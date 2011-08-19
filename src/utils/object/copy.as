@@ -18,7 +18,7 @@ package utils.object
 		target 		||= new Object;
 		excludes 	||= [ ];
 		
-		var properties    = getKeys(src);
+		var properties : Array = getKeys(src);
 		
 		for each (var key:Object in properties) {
 			try {

@@ -22,7 +22,7 @@ package utils.object
 	 */
 	public function merge(target:Object, source:Object):Object 
 	{
-		for (var field:Object in source || {}) 
+		for each (var field:* in getKeys(source || { }) )
 		{
 			target[field] = source[field];
 		}
