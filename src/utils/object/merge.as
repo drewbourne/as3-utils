@@ -20,11 +20,12 @@ package utils.object
 	 * 
 	 * @author drewbourne
 	 */
-	public function merge(target:Object, source:Object):Object 
+	public function merge(target:Object, source:Object, overwrite:Boolean=false):Object 
 	{
 		for each (var field:* in getKeys(source || { }) )
 		{
-			target[field] = source[field];
+			if ( overwrite || target.hasOwnProperty(field) != true ) 
+				target[field] = source[field];
 		}
 		
 		return target;
