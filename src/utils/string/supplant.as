@@ -30,7 +30,7 @@
 	 *            trace(  supplant(source, fields) )
 	 * 			
 	 *        renders output:
-	 
+	 *
 	 *        <table border="2">
 	 *            <tr><th>Last</th><td>Burleson</td></tr>
 	 *            <tr><th>First</th><td>Thomas</td></tr>
@@ -42,7 +42,7 @@
 	 */
 	public function supplant(target:String, fields:Object, matcher:RegExp = null):String {
 		
-		matcher ||= /\{([^\{\}]*)\}/g;
+		matcher ||= /\{\s*([^\s\{\}]*)\s*\}/g;
 		
 		// Support for property chains
 		
@@ -59,5 +59,29 @@
 		
 		return String(target.replace(matcher,getPropertyChainValue));
 	}
+	
+	
+	/**
+	 * 
+	 * Javascript equivalent (with support for property chains)
+	 * 
+	  function supplant ( template, values, pattern ) {
+	    pattern = pattern || /\{([^\{\}]*)\}/g;
+		 
+	    return template.replace(pattern, function(a, b) {
+	        var p = b.split('.'),
+	            r = values;
+	        
+	        try {
+	           for (var s in p) { r = r[p[s]];  };
+	        } catch(e){
+	          r = a;
+	        }
+	        
+	        return (typeof r === 'string' || typeof r === 'number') ? r : a;
+	      });
+	    };
+		 
+	 */
 	
 }

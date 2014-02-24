@@ -24,8 +24,15 @@ package utils.object
 	{
 		for each (var field:* in getKeys(source || { }) )
 		{
-			if ( overwrite || target.hasOwnProperty(field) != true ) 
-				target[field] = source[field];
+			try {
+	
+				if ( overwrite || !target.hasOwnProperty(field) )
+				{
+					target[field] = source[field];
+				}
+	
+			} catch( e:Error ) { /* silent error */ }
+
 		}
 		
 		return target;

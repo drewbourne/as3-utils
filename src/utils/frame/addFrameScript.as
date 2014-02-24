@@ -3,7 +3,7 @@ package utils.frame
 	import flash.display.MovieClip;
 
 	/**
-	   Calls a specified method when a specific frame is reached in a MovieClip timeline.
+	   Calls a specified method when a specific frame is reached in a MovieClip controls.timeline.
 
 	   @param target: The MovieClip that contains the <code>frame</code>.
 	   @param frame: The frame to be notified when reached. Can either be a frame number (<code>uint</code>), or the frame label (<code>String</code>).

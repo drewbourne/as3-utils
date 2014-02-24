@@ -6,3 +6,4 @@ bin-release
 /.actionScriptProperties
 /.flexLibProperties
 /.project
+/as3-utils.iml

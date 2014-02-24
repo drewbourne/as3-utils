@@ -4,7 +4,7 @@ package utils.textField
 	import flash.text.TextField;
 	
 	/**
-	 * Because TextFields are not MovieClips, you cannot do timeline
+	 * Because TextFields are not MovieClips, you cannot do controls.timeline
 	 * tweens on a TextField in Flash CSx without first making it a child
 	 * of a MovieClip.
 	 *  
