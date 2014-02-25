@@ -22,7 +22,9 @@ package utils.object
 	 */
 	public function merge(target:Object, source:Object, overwrite:Boolean=false):Object 
 	{
-		for each (var field:* in getKeys(source || { }) )
+    var fields : Array = getKeys(source || { });
+
+		for each (var field:* in fields)
 		{
 			try {
 	
