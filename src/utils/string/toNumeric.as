@@ -8,6 +8,8 @@ package utils.string
 	 */
 	public function toNumeric(str:String):String
 	{
+		str ||= "";
+		
 		var len:Number = str.length;
 		var result:String = "";
 		for (var i:int = 0; i < len; i++)
